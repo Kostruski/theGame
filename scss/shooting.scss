@@ -1,0 +1,34 @@
+.gun {
+    position: absolute;
+    bottom: -350px;
+    width: 10px;
+    height: 400px;
+    background-color: rgba(243, 244, 247, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 0 9px 6px rgba(30,48,245,1);
+    box-shadow: 0 0 9px 6px rgba(30,48,245,1);
+   
+    
+    }
+
+    .rightGun {
+        right: 5px;
+        transform: rotate(-35deg);
+        z-index: 10;
+    }
+
+    .leftGun {
+        left: 5px;
+        transform: rotate(35deg);
+        z-index: 10;
+    }
+
+    #enemyGun0 {
+      width:1px;
+      height: 1px;
+      background: red;
+      border-radius: 50%; 
+      z-index: 30;
+      opacity: 1;
+      position: absolute;
+    }
