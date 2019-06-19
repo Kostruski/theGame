@@ -9,7 +9,7 @@
      padding: 0;
      margin: 0;
      position: relative;   
-     cursor: none;
+    //  cursor: none;
      overflow: hidden;
   }
   
@@ -101,23 +101,24 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                overflow: visible;
                 
                
                 
     
                  .busted {
-                   display: block;
+                   position: absolute;
                    background-image: url(../img/expsprite.png);
                    background-repeat: no-repeat;
-                   animation: boom 0.5s 0s steps(29); 
-                   height: 150px;
-                   width: 150px; 
-  
-                }
+                   animation: boom 1s 0s steps(37); 
+                   height: 300px;
+                   width: 300px; 
+                   background-position-x: -30px;
+                   }
 
                 @keyframes boom {
                     100%{
-                        background-position-x: -4350px;
+                        background-position-x: -11100px;
                     }}
 
             }

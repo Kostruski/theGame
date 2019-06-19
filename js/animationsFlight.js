@@ -1,5 +1,5 @@
 import {enemyShot} from "./animationsEnemyShooting.js";
-export  let tl = new TimelineMax({repeat: 1000, yoyo: `${Math.random()>0.5}`}); //
+export  let tl = new TimelineMax({repeat: 1, yoyo: `${Math.random()>0.5}`}); //
 export let targetInSight = false
 
 // opis ruchu statku po pojawieniu się na ekranie
@@ -27,7 +27,24 @@ const targetMovement = function( targetClass, targetTweenDuration, xdirection, y
     tl.fromTo(`${targetClass}`, `${targetTweenDuration/2}`, {rotation: 0}, {rotation: 30*`${xdirection}`},`-=${targetTweenDuration}`);
     tl.fromTo(`${targetClass}`, `${targetTweenDuration/2}`, {rotation: 30*`${xdirection}`},{rotation: 0},`-=${targetTweenDuration/2}`);
 
-    tl.fromTo(`${targetClass}`, `${targetTweenDuration}`, {x:1000*`${xdirection}`}, {x:0, y:0, ease: `${ease2}` , onComplete: function(){       count++;       enemyShot(howOftenEnemyShoots,count)     }, onReverseComplete: function(){       count++;       enemyShot(howOftenEnemyShoots,count)     }});
+    tl.fromTo(
+      `${targetClass}`,
+      `${targetTweenDuration}`,
+      { x: 1000 * `${xdirection}` },
+      {
+        x: 0,
+        y: 0,
+        ease: `${ease2}`,
+        onComplete: function() {
+          count++;
+          enemyShot(howOftenEnemyShoots, count);
+        },
+        onReverseComplete: function() {
+          count++;
+          enemyShot(howOftenEnemyShoots, count);
+        }
+      }
+    );
 
     tl.fromTo(`${targetClass}`, `${targetTweenDuration/2}`, {rotation: 0}, {rotation: -30*`${xdirection}`},`-=${targetTweenDuration}`);
     tl.fromTo(`${targetClass}`, `${targetTweenDuration/2}`, {rotation: -30*`${xdirection}`},{rotation: 0},`-=${targetTweenDuration/2}`);

@@ -37,16 +37,17 @@
 
 //  .busted {
 //       background-image: url(../img/expsprite.png);
-//       animation: boom 0.5s 0s steps(29); 
-//       height: 150px;
-//       width: 150px;      
+//       animation: boom 10 0s steps(37); 
+//       height: 300px;
+//       width: 300px;      
+//       background-repeat: no-repeat;
 //     }
 
   
-    @keyframes boom {
-        100%{
-            background-position-x: -4350px;
-        }}
+//     @keyframes boom {
+//         100%{
+//             background-position-x: -11100px;
+//         }}
 
 
 

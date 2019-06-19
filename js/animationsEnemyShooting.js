@@ -1,6 +1,6 @@
 
 const enemyGun = document.querySelector('#enemyGun0');
-const howOftenEnemyShoots = 8 //co ósmy strzał
+
 
 
 const randNum = function(val){
