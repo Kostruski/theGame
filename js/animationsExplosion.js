@@ -11,10 +11,7 @@ export const explosion = function(el) {
     TweenMax.to(`.${el.className}`, 2, {opacity:0, onComplete: function(){
       el.remove();
     }})
-    // setTimeout(function(){
-    //   el.remove()
-    // }, 1000)
-  } 
+   } 
     
      
       
