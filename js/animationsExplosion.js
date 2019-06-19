@@ -8,7 +8,7 @@ export const explosion = function(el) {
     shootTl.kill(); 
     tl.kill();
     el.innerHTML='<div class="busted"></div>';
-    TweenMax.to(`.${el.className}`, 1, {opacity:0, onComplete: function(){
+    TweenMax.to(`.${el.className}`, 2, {opacity:0, onComplete: function(){
       el.remove();
     }})
     // setTimeout(function(){
