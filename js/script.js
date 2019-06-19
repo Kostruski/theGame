@@ -16,10 +16,13 @@ const maxLeft = document.querySelector(".fr").offsetWidth * 0.45;
 const frame = document.querySelector(".fr");
 let count = 0;
 
-wrap.addEventListener("mousemove", moveAround);
+// wrap.addEventListener("mousemove", moveAround);
 window.addEventListener("click", confirmHit);
 window.addEventListener("click", shotOnTarget);
-enterOfTarget(".ball0");
+enterOfTarget(".ball0", 8); // cyfra to howOftenEnemyShoots - co 8 starzał
+setInterval(function(){    
+    wrap.addEventListener("mousemove", moveAround);
+},50)
 
 
 

@@ -24,11 +24,29 @@
     }
 
     #enemyGun0 {
-      width:1px;
-      height: 1px;
-      background: red;
-      border-radius: 50%; 
-      z-index: 30;
-      opacity: 1;
-      position: absolute;
+      transform-origin: 50% 50%;
+      width:40px;
+      height: 40px;
+     background-image: url(../img/fire-ball1.png);
+        background-size: cover;
+       z-index: 30;
+      opacity: 0;
+      margin: auto;  
+     
     }
+
+//  .busted {
+//       background-image: url(../img/expsprite.png);
+//       animation: boom 0.5s 0s steps(29); 
+//       height: 150px;
+//       width: 150px;      
+//     }
+
+  
+    @keyframes boom {
+        100%{
+            background-position-x: -4350px;
+        }}
+
+
+

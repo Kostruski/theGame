@@ -10,17 +10,18 @@
      margin: 0;
      position: relative;   
      cursor: none;
+     overflow: hidden;
   }
   
   
     .wrap {
-        position: absolute;
+        position: relative;
         width: 100%;
         min-width: 1200px;
         height: 100vh;
         display:flex;
         justify-content: center;
-        align-items: center;
+        align-items: center;       
        
        
         .cockpittop {
@@ -88,30 +89,37 @@
               background-position: center;
               z-index: -200;
             }
-            .target {
+            div[class^="ball"] {
                 position: absolute;
-                border-radius: 50%;
-                width: 70px;
-                height: 70px;
-                background: rgb(235, 151, 16);
-                display: none;
+                width: 170px;
+                height: 170px;
+                background-image: url(../img/tieshield.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
                 transform-origin: 50% 50%;
-                display:flex;
+                display: flex;
                 justify-content: center;
                 align-items: center;
+                
+               
+                
     
-                &::after {
-                    content: "";
-                    display: block;
-                    width: 170px;
-                    height: 10px;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    background: rgb(166, 255, 0);
+                 .busted {
+                   display: block;
+                   background-image: url(../img/expsprite.png);
+                   background-repeat: no-repeat;
+                   animation: boom 0.5s 0s steps(29); 
+                   height: 150px;
+                   width: 150px; 
   
                 }
+
+                @keyframes boom {
+                    100%{
+                        background-position-x: -4350px;
+                    }}
+
             }
       
            .fr {

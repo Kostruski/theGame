@@ -1,10 +1,12 @@
 const wrap = document.querySelector(".wrap");
+import {explosion} from "./animationsExplosion.js"
 
 const view = document.querySelector(".view");
 const stars = document.querySelector(".stars");
 
 const croshair = document.querySelector(".croshair");
-const targets = document.querySelectorAll(".target");
+const targets = document.querySelectorAll("[class^=ball]");
+
 
 const maxTop = document.querySelector(".fr").offsetHeight * 0.45;
 const maxLeft = document.querySelector(".fr").offsetWidth * 0.45;
@@ -18,17 +20,27 @@ export const confirmHit = function() {
 
   targets.forEach(el => {
     // funkcja wskazująca trafienie
-    let valX = el.getBoundingClientRect().left;
-    let valY = el.getBoundingClientRect().top;
+    let valX = el.getBoundingClientRect().left+el.clientWidth/2;
+    let valY = el.getBoundingClientRect().top+el.clientHeight/2;
     let hitX = Math.abs(croX - valX) < croshair.clientWidth ? true : false;
     let hitY = Math.abs(croY - valY) < croshair.clientHeight ? true : false;
-    // console.log(croX, "polozenie celownika")
-    // console.log(valX, "polozenie x pilki");
+    // console.log(croX, "polozenie x celownika")
+    // console.log(croY, "polozoenie y celownika ")
+    // console.log(valX, "polozenie x celu");
+    // console.log(valY, "polozenie y celu");
     // console.log(Math.abs(croX-valX), "róznica")
-    // console.log(croshair.width, "szerokość celownika")
-    // console.log(hitX);
+    // console.log(croshair.clientWidth, "szerokość celownika")
+    // console.log( "czy trafiony x", hitX);
+    // console.log("czy trafiony y", hitY)
+    // console.log(el.clientWidth, "serokość")
 
-    if (hitX && hitY) el.remove(); // trafienie
+    if (hitX && hitY) {
+      
+          
+      explosion(el)
+      
+      // el.remove()
+    }
   });
 };
 

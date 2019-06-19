@@ -1,9 +1,11 @@
 
 
 const shotSpeed = 0.3;
+export var shootTl = new TimelineMax()
 
 export const shotOnTarget = function() {
-       
+
+   
     const shootTl = new TimelineMax()
     shootTl.fromTo(".ship",`${shotSpeed}`/2, {scale: 1}, {scale: 1.05})
     shootTl.fromTo(".ship",`${shotSpeed}`/2, {scale: 1.05}, {scale: 1})

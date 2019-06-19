@@ -1,5 +1,6 @@
 
-const enemyGun = document.querySelector('#enemyGun0')
+const enemyGun = document.querySelector('#enemyGun0');
+const howOftenEnemyShoots = 8 //co ósmy strzał
 
 
 const randNum = function(val){
@@ -12,13 +13,31 @@ const topToTarget = document.documentElement.clientHeight+randNum(50);
 
 
 
-var count = 0
-export const enemyShot = function(){
-    console.log("liczba oddanych strzałów", count);
-    count++;
-    // enemyGun.classList.remove("ball0");
-    enemyGun.style.opacity=1;
-    let enemyShootingTl = new TimelineMax({ease: Power4.easeIn});
-    enemyShootingTl.to('#enemyGun0', 0.4, {width: 400, height: 400, onComplete: function(){TweenMax.set("#enemyGun0", {clearProps: "all"})}})
-}
+
+export const enemyShot = function(howOftenEnemyShoots, count) {
+
+ 
+  console.log(count)
+ 
+  if (count%howOftenEnemyShoots === 0 && count >= howOftenEnemyShoots ) {
+    console.log("był strzał przy count = ", count);   
+    enemyGun.style.opacity = 1;
+    let enemyShootingTl = new TimelineMax({ ease: Power0.easeNone });
+    enemyShootingTl.to("#enemyGun0", 0.4, {
+      scale: 60,
+      onComplete: function() {
+        TweenMax.set("#enemyGun0", { clearProps: "all" });
+      }
+    });
+    enemyShootingTl.from(".wrap", 0.1, {
+      backgroundColor: `rgba(238, 56, 50, 0.185)`,
+      onComplete: function() {
+        TweenMax.set(".wrap", { clearProps: "all" }, "-=0.1");
+      }
+    });
+  } 
+
+  
+  
+};
 
