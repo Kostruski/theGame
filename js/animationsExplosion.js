@@ -1,22 +1,20 @@
-import {tl} from "./animationsFlight.js";
-import {shootTl} from "./animationsShooting.js"
-import {targetInSight} from "./animationsFlight.js" //możliwość zestrzelenia statku dopiero po zakończeniu pierwszej animacji;
 
+import {targetInSight} from "./animationsFlight.js" //możliwość zestrzelenia statku dopiero po zakończeniu pierwszej animacji;
+const hudinfo2 = document.querySelector(".info2")
 export const explosion = function(el) {
 
   if(targetInSight) {
-    shootTl.kill(); 
-    tl.kill();
+    
+   const enemyGun = document.querySelector(`.${el.className} div`);       
+   TweenMax.killTweensOf(enemyGun );    
+   TweenMax.killTweensOf(`.${el.className}`);
     el.innerHTML='<div class="busted"></div>';
     TweenMax.to(`.${el.className}`, 2, {opacity:0, onComplete: function(){
       el.remove();
+      const targetsList = document.querySelectorAll("[class^='ball']");
+      hudinfo2.innerText = (`targets left ${targetsList.length}`)
     }})
-   } 
-    
+   }   
      
-      
-      
-    // const explosionTl = new TimelineMax();
-    // explosionTl.to(`.${elme}`:after, 1, {scale: 2, backgroundPosition: `-4500px  0`})
-    //el.remove()
+
 }

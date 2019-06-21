@@ -1,5 +1,7 @@
 import { confirmHit } from "./controls.js";
 
+
+
 const shotSpeed = 0.3;
 export var shootTl = new TimelineMax()
 
@@ -29,9 +31,12 @@ export const shotOnTarget = function() {
         height: 10,
         ease: Power4.easeOut,
         onComplete: function() {
+          
           TweenMax.set(".gun", { clearProps: "all" });
           window.addEventListener("click", confirmHit);
           window.addEventListener("click", shotOnTarget);
+          
+
         }
       },
       `-=${shotSpeed}`

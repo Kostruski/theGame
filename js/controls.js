@@ -5,7 +5,8 @@ const view = document.querySelector(".view");
 const stars = document.querySelector(".stars");
 
 const croshair = document.querySelector(".croshair");
-const targets = document.querySelectorAll("[class^=ball]");
+
+
 
 
 const maxTop = document.querySelector(".fr").offsetHeight * 0.45;
@@ -14,6 +15,8 @@ const frame = document.querySelector(".fr");
 let count = 0;
 
 export const confirmHit = function() {
+  
+  const targets = document.querySelectorAll("[class^='ball']");
   let croX = croshair.getBoundingClientRect().left;
   let croY = croshair.getBoundingClientRect().top;
  

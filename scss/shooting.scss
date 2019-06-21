@@ -23,7 +23,7 @@
         z-index: 10;
     }
 
-    #enemyGun0 {
+    .enemyGun {
       transform-origin: 50% 50%;
       width:40px;
       height: 40px;
@@ -35,19 +35,6 @@
      
     }
 
-//  .busted {
-//       background-image: url(../img/expsprite.png);
-//       animation: boom 10 0s steps(37); 
-//       height: 300px;
-//       width: 300px;      
-//       background-repeat: no-repeat;
-//     }
-
-  
-//     @keyframes boom {
-//         100%{
-//             background-position-x: -11100px;
-//         }}
 
 
 

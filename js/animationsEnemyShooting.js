@@ -1,5 +1,7 @@
 
-const enemyGun = document.querySelector('#enemyGun0');
+// const hud = document.querySelector(".hud");
+const hudinfo1 = document.querySelector(".info1");
+
 
 
 
@@ -11,33 +13,43 @@ const randNum = function(val){
 const leftToTarget = document.documentElement.clientWidth+randNum(50);
 const topToTarget = document.documentElement.clientHeight+randNum(50);
 
+export let enemyShootingTl = new TimelineMax({ ease: Power0.easeNone });
 
+export let damage = 0;
 
-
-export const enemyShot = function(howOftenEnemyShoots, count) {
-
+export const enemyShot = function(targetClass,howOftenEnemyShoots,count) {
  
-  console.log(count)
  
+
+     
   if (count%howOftenEnemyShoots === 0 && count >= howOftenEnemyShoots ) {
-    console.log("był strzał przy count = ", count);   
+    console.log("był strzał przy count = ",targetClass, damage +"% ", count);  
+    const enemyGun = document.querySelector(`.${targetClass} div`)
     enemyGun.style.opacity = 1;
-    let enemyShootingTl = new TimelineMax({ ease: Power0.easeNone });
-    enemyShootingTl.to("#enemyGun0", 0.4, {
+    damage ++;
+      
+    
+    enemyShootingTl.to(enemyGun, 0.4, {
       scale: 60,
       onComplete: function() {
-        TweenMax.set("#enemyGun0", { clearProps: "all" });
+        hudinfo1.innertText=(`Damage ${damage}% !`) 
+        TweenMax.set(enemyGun, { clearProps: "all" });
+        hudinfo1.innerText = (damage===10) ? `Game Over` : `Damage ${damage}0% !`; 
       }
     });
     enemyShootingTl.from(".wrap", 0.1, {
       backgroundColor: `rgba(238, 56, 50, 0.185)`,
       onComplete: function() {
-        TweenMax.set(".wrap", { clearProps: "all" }, "-=0.1");
+      TweenMax.set(".wrap", { clearProps: "all" }, "-=0.1");
+
       }
     });
   } 
-
   
   
 };
+
+
+
+
 
