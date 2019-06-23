@@ -1,4 +1,5 @@
 import { enemyShot } from "./animationsEnemyShooting.js";
+import {Sound} from "./sounds.js"
 
 
 // opis ruchu statku po pojawieniu się na ekranie

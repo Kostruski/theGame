@@ -1,6 +1,7 @@
 import { pilot, start } from "./startPage.js";
 const hudinfo1 = document.querySelector(".info1");
 const startPage = document.querySelector(".startPage");
+import {Sound} from "./sounds.js"
 
 export let enemyShootingTl = new TimelineMax({ ease: Power0.easeNone });
 
@@ -9,6 +10,9 @@ export const enemyShot = function(targetClass, howOftenEnemyShoots, count) {
     //  console.log("był strzał przy count = ",targetClass, pilot.damage +"% ");
     const enemyGun = document.querySelector(`.${targetClass} div`);
     enemyGun.style.opacity = 1;
+    let shootSound = new Sound("enemyShoot.wav");
+    shootSound.play();
+
     pilot.damage++;
     hudinfo1.innerText = `Damage ${pilot.damage}0% !`;
 

@@ -1,4 +1,5 @@
 import { confirmHit } from "./controls.js";
+import {Sound} from "./sounds.js"
 
 
 
@@ -7,6 +8,8 @@ const gun = document.querySelectorAll(".gun")
 export var shootTl = new TimelineMax()
 
 export const shotOnTarget = function() {
+    let shootSound = new Sound("shoot.wav");
+    shootSound.play();
     window.removeEventListener("click", confirmHit);
     window.removeEventListener("click", shotOnTarget);
    

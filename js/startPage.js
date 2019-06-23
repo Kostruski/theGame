@@ -1,6 +1,8 @@
 import { enterOfTarget } from "./animationsFlight.js";
 import { confirmHit, moveAround } from "./controls.js";
 import { shotOnTarget } from "./animationsShooting.js";
+import {Sound} from "./sounds.js"
+
 const dispLevel = document.querySelector(".dispLevel");
 const increase = document.querySelector(".increase");
 const decrease = document.querySelector(".decrease");
@@ -11,6 +13,8 @@ const hudinfo2 = document.querySelector(".info2");
 const hudinfo1 = document.querySelector(".info1");
 const gun = document.querySelectorAll(".gun");
 const wrap = document.querySelector(".wrap");
+
+let goSound = new Sound("go.wav")
 
 export let pilot = {};
 
@@ -51,6 +55,7 @@ export const start = function() {
       } else {
         clearInterval(time);
         startPage.innerHTML = `<strong>GO !</strong>`;
+        goSound.play();
         const starAnimTl = new TimelineMax();
         starAnimTl.fromTo("strong", 1, { scale: 0 }, { scale: 1 });
         starAnimTl.to(".startPage", 1, {
