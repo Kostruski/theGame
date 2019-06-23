@@ -103,6 +103,3 @@ Pilot.prototype.levelUpdate = function() {
   hudinfo2.innerText = `targets left ${targetsList.length}`;
   hudinfo1.innerText = `Damage ${pilot.damage}% !`;
 };
-
-
-

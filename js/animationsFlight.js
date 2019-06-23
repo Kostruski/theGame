@@ -14,7 +14,7 @@ const targetMovement = function(
 
   // let ease = "Back.easeOut.config(3)"; // bounce
   // let ease1 = "Power4.easeOut";
-  let ease2 = "Elastic.easeInOut.config(1, 0.3)"; // elastic
+   let ease2 = "Elastic.easeInOut.config(1, 0.3)"; // elastic
 
   let count = parseInt(targetClass.replace("ball", ""));
   
@@ -331,7 +331,7 @@ export const enterOfTarget = function(
   // czas pomiędzy zmianami w animacji ruchu samolotu przeciwnika
 
   function enemyStartPosition(enemyElement) {
-    enemyElement.style.transform = "scale(0.1)";
+    enemyElement.style.transform = "scale(0.01)";
     let randX = Math.floor(Math.random() * 170);
     let randY = Math.floor(Math.random() * 100);
     enemyElement.style.left = `${Math.random() > 0.5 ? -randX : 100 + randX}%`;
@@ -343,7 +343,7 @@ export const enterOfTarget = function(
     top: `${randNum(50) + 50}%`,
     left: `${randNum(50) + 50}%`,
     scale: 1.2,
-    ease: Power2.easeOut,
+    ease: Back.easeOut.config(3),
     onComplete: function() {
       // targetInSight = true;
       // document.querySelector(`.${targetClass}`).style.backgroundImage =

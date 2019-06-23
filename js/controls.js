@@ -1,32 +1,16 @@
-
-
-
-
-import {explosion} from "./animationsExplosion.js";
+import { explosion } from "./animationsExplosion.js";
 const view = document.querySelector(".view");
 const croshair = document.querySelector(".croshair");
 
-
-
-
-
-
-
-
-
-
-
-
-export const confirmHit = function() {  
+export const confirmHit = function() {
   const targets = document.querySelectorAll("[class^='ball']");
   let croX = croshair.getBoundingClientRect().left;
   let croY = croshair.getBoundingClientRect().top;
- 
 
   targets.forEach(el => {
     // funkcja wskazująca trafienie
-    let valX = el.getBoundingClientRect().left+el.clientWidth/2;
-    let valY = el.getBoundingClientRect().top+el.clientHeight/2;
+    let valX = el.getBoundingClientRect().left + el.clientWidth / 2;
+    let valY = el.getBoundingClientRect().top + el.clientHeight / 2;
     let hitX = Math.abs(croX - valX) < croshair.clientWidth ? true : false;
     let hitY = Math.abs(croY - valY) < croshair.clientHeight ? true : false;
     // console.log(croX, "polozenie x celownika")
@@ -40,18 +24,13 @@ export const confirmHit = function() {
     // console.log(el.clientWidth, "serokość")
 
     if (hitX && hitY) {
-      
-          
-      explosion(el)
-      
-    
+      explosion(el);
     }
   });
 };
 
 // ruch tła po ekranie
 export const moveAround = function(e) {
-  
   let pad = 0.9; // odsuwa ruch myszki przy krawędziach widoku o 10% można regulowac mouse sensitivity
   let asixX = (e.clientX - window.innerWidth / 2) * -1;
   let asixXstyleValue = asixX + asixX * pad;
@@ -63,14 +42,4 @@ export const moveAround = function(e) {
   view.style.top = asixYstyleValue + "px";
 };
 
-// rozpoczęcie
 
-
-  
-  
-  
-  
-  
-  
-  
-  

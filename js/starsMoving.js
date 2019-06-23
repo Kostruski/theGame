@@ -1,14 +1,14 @@
 export const startStars = function(){
 
 
-var field = document.querySelector(".stars");
-var f = field.getContext("2d", { alpha: false });
+const field = document.querySelector(".stars");
+const f = field.getContext("2d", { alpha: false });
 
-var stars = {};
-var starIndex = 0;
-var numStars = 0;
-var acceleration = 2;
-var starsToDraw = (field.width * field.height) / 50;
+let stars = {};
+let starIndex = 0;
+let numStars = 0;
+let acceleration = 2;
+const starsToDraw = (field.width * field.height) / 50;
 
 
 function Star() {
@@ -75,7 +75,7 @@ function draw() {
   	if (field.height != window.innerHeight)
       	field.height = 4*window.innerHeight;
   
-  	// Play with the "a" value to create streams...it's fun!
+ 
     f.fillStyle = "rgba(0, 0, 0, 0.9)";
     f.fillRect(0, 0, field.width, field.height);
 
@@ -89,7 +89,7 @@ function draw() {
     }
 }
 
-// Original timing of the screensaver
+
 setInterval(window.requestAnimationFrame, 60, draw);
 
 }
