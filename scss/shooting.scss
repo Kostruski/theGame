@@ -1,12 +1,13 @@
 .gun {
     position: absolute;
-    bottom: -350px;
+    bottom: -600px;
     width: 10px;
     height: 400px;
     background-color: rgba(243, 244, 247, 0.7);
     border-radius: 5px;
     box-shadow: 0 0 9px 6px rgba(30,48,245,1);
     box-shadow: 0 0 9px 6px rgba(30,48,245,1);
+    opacity: 1;
    
     
     }
@@ -27,9 +28,9 @@
       transform-origin: 50% 50%;
       width:40px;
       height: 40px;
-     background-image: url(../img/fire-ball1.png);
-        background-size: cover;
-       z-index: 30;
+      background-image: url(../img/fire-ball1.png);
+      background-size: cover;
+      z-index: 30;
       opacity: 0;
       margin: auto;  
      

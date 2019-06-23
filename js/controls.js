@@ -1,21 +1,23 @@
-const wrap = document.querySelector(".wrap");
-import {explosion} from "./animationsExplosion.js"
 
+
+
+
+import {explosion} from "./animationsExplosion.js";
 const view = document.querySelector(".view");
-const stars = document.querySelector(".stars");
-
 const croshair = document.querySelector(".croshair");
 
 
 
 
-const maxTop = document.querySelector(".fr").offsetHeight * 0.45;
-const maxLeft = document.querySelector(".fr").offsetWidth * 0.45;
-const frame = document.querySelector(".fr");
-let count = 0;
 
-export const confirmHit = function() {
-  
+
+
+
+
+
+
+
+export const confirmHit = function() {  
   const targets = document.querySelectorAll("[class^='ball']");
   let croX = croshair.getBoundingClientRect().left;
   let croY = croshair.getBoundingClientRect().top;
@@ -42,13 +44,14 @@ export const confirmHit = function() {
           
       explosion(el)
       
-      // el.remove()
+    
     }
   });
 };
 
 // ruch tła po ekranie
 export const moveAround = function(e) {
+  
   let pad = 0.9; // odsuwa ruch myszki przy krawędziach widoku o 10% można regulowac mouse sensitivity
   let asixX = (e.clientX - window.innerWidth / 2) * -1;
   let asixXstyleValue = asixX + asixX * pad;
@@ -59,6 +62,10 @@ export const moveAround = function(e) {
   view.style.left = asixXstyleValue + "px";
   view.style.top = asixYstyleValue + "px";
 };
+
+// rozpoczęcie
+
+
   
   
   

@@ -1,0 +1,49 @@
+
+
+.startPage {
+    position: absolute;
+    width: 40vw;
+    height: 60vh;
+    // background-color: #1e1f20;
+    // border: 1px solid silver;
+    border-radius: 5px;
+    z-index: 500;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    flex-direction: column;
+    span, div {
+        margin: 10px;
+    }
+    div {
+        cursor: pointer;
+    }
+   
+}
+
+.start {
+    cursor: pointer;
+}
+
+.choseLevel {
+    width: 100%;
+    display: flex;
+    // align-items: center;
+     justify-content: center;
+     text-align: center;
+   div {
+       width: 5%;
+       font-size: 50px;
+   }
+   
+}
+
+strong {
+    font-size: 80px;
+}
+

@@ -2,7 +2,8 @@ import { confirmHit } from "./controls.js";
 
 
 
-const shotSpeed = 0.3;
+const shotSpeed = 0.2;
+const gun = document.querySelectorAll(".gun")
 export var shootTl = new TimelineMax()
 
 export const shotOnTarget = function() {
@@ -33,6 +34,7 @@ export const shotOnTarget = function() {
         onComplete: function() {
           
           TweenMax.set(".gun", { clearProps: "all" });
+          gun.forEach(el => el.style.opacity = 1);
           window.addEventListener("click", confirmHit);
           window.addEventListener("click", shotOnTarget);
           

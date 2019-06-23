@@ -1,6 +1,5 @@
 import { enemyShot } from "./animationsEnemyShooting.js";
 
-export let targetInSight = false;
 
 // opis ruchu statku po pojawieniu się na ekranie
 const targetMovement = function(
@@ -11,11 +10,10 @@ const targetMovement = function(
   howOftenEnemyShoots
 ) {
   tl = new TimelineMax({ repeat: 1000, yoyo: `${Math.random() > 0.5}` });
-  // var tl2 = new TimelineMax({repeat:-1, yoyo: true}); delikatne unoszenie się do góry chyba nie potrzeben
-  // tl2.to(".ball0", 1 , { y: 10, ease: Power0.easeNone})
+  
 
-  let ease = "Back.easeOut.config(3)"; // bounce
-  let ease1 = "Power4.easeOut";
+  // let ease = "Back.easeOut.config(3)"; // bounce
+  // let ease1 = "Power4.easeOut";
   let ease2 = "Elastic.easeInOut.config(1, 0.3)"; // elastic
 
   let count = parseInt(targetClass.replace("ball", ""));
@@ -334,22 +332,22 @@ export const enterOfTarget = function(
 
   function enemyStartPosition(enemyElement) {
     enemyElement.style.transform = "scale(0.1)";
-    let randX = Math.floor(Math.random() * 50);
-    let randY = Math.floor(Math.random() * 40);
+    let randX = Math.floor(Math.random() * 170);
+    let randY = Math.floor(Math.random() * 100);
     enemyElement.style.left = `${Math.random() > 0.5 ? -randX : 100 + randX}%`;
     enemyElement.style.top = `${Math.random() > 0.5 ? -randY : 100 + randY}%`;
   }
   enemyStartPosition(enemyElement);
 
   TweenMax.to(`.${targetClass}`, `${targetEntranceSpeed}`, {
-    top: `${randNum(40) + 50}%`,
-    left: `${randNum(45) + 50}%`,
+    top: `${randNum(50) + 50}%`,
+    left: `${randNum(50) + 50}%`,
     scale: 1.2,
-    ease: Power4.easeOut,
+    ease: Power2.easeOut,
     onComplete: function() {
-      targetInSight = true;
-      document.querySelector(`.${targetClass}`).style.backgroundImage =
-        "url('./img/tiec.svg')";
+      // targetInSight = true;
+      // document.querySelector(`.${targetClass}`).style.backgroundImage =
+      //   "url('./img/tiec.svg')"; rozycie samolotu zanim doleci
 
       let xdirection = leftHalfPosition(enemyElement) ? 1 : -1;
       let ydirection = topHalfPosition(enemyElement) ? 1 : -1;
