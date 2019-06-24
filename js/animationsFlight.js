@@ -343,7 +343,7 @@ export const enterOfTarget = function(
   TweenMax.to(`.${targetClass}`, `${targetEntranceSpeed}`, {
     top: `${randNum(50) + 50}%`,
     left: `${randNum(50) + 50}%`,
-    scale: 1.2,
+    scale: 1,
     ease: Back.easeOut.config(3),
     onComplete: function() {
       // targetInSight = true;
