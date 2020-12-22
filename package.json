@@ -20,7 +20,7 @@
     "gulp-autoprefixer": "^6.1.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "node-notifier": "^5.4.0",
+    "node-notifier": "^8.0.1",
     "node-sass": "^4.12.0"
   }
 }
